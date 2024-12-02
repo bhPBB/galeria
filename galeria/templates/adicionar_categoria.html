@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Adicionar uma categoria
+{% endblock %}
+
+{% block conteudo %}
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-6 text-center my-3">
+            <h1 class="title fs-1 mt-2">Nova Categoria</h1>
+        </div>
+    </div>
+    <div class="row justify-content-center">
+        <div class="col-md-9 col-lg-6">
+            <div class="alert alert-info">
+                Você poderá selecionar a nova categoria na próxima vez em que adicionar uma imagem.
+            </div>
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                {{form.as_p}}
+                <button type="submit" class="btn btn-dark">Salvar</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

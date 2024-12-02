@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
+
+:root {
+    --cinza: rgb(71, 69, 69);
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+}
+
+.bg-gray {
+    background: var(--cinza);
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    color: var(--cinza);
+}
+
+.btn-dark {
+    background: var(--cinza);
+}
+
+.btn-dark:hover {
+    background: black;
+}
+
+/* !important */
+.container-imagem {
+    height: 90svh;
+}
+
+.align-center {
+    align-content: center;
+}
+
+.imagem {
+    max-width: 100%;
+    max-height: 70svh; 
+    object-fit: contain;
+}
+
+.card-min-width {
+    min-width: 165px;
+}
+
+.card {
+    height: 350px;
+    min-width: 165px;
+}
+
+img {
+    object-fit: cover;
+    height: 200px;
+}

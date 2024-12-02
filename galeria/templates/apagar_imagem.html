@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block titulo %}
+Deletar Imagem
+{% endblock %}
+
+{% block conteudo %}
+<div class="container">
+    <div class="d-flex flex-column justify-content-center">
+        <div class="alert alert-danger d-flex flex-row pb-0 align-items-center justify-content-between mt-2">
+            <p>Tem certeza de que deseja apagar esta imagem?</p>
+            <form method="post" class="d-flex align-items-center">
+                {% csrf_token %}
+                    <input type="submit" value="Sim, desejo apagar esta imagem." class="btn btn-outline-danger mb-3" id="btn-apagar">
+            </form>
+        </div>
+        <img src="{{ imagem.imagem.url }}" class="imagem" alt="{{ imagem.descricao }}">
+    </div>
+</div>
+
+{% endblock %}

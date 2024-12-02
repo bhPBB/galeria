@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Box Icons -->
+    <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js" defer></script>
+    <!-- CSS -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'galeria/styles/auth.css' %}">
+    <title>{% block titulo %}{% endblock %}</title>
+</head>
+<body>
+    <h1>{% block h1 %}{% endblock %}</h1>
+    <div style="margin: 20px 0 20px 0;">
+        {% block extra %}{% endblock %} <!-- Para o vídeo de apresentação em login.html-->
+    </div>
+    <div class="wrapper">
+        <h1>{% block titulo_form %}{% endblock %}</h1>
+        
+        <!-- Mensagem de erro -->
+        {% if form.errors %}
+        <div class="error-message">
+            <p>Erro:</p>
+            {% block erro %}
+            {% endblock %}
+        </div>
+        {% endif %}
+        {% block form %}{% endblock %}
+    </div>
+</body>
+</html>

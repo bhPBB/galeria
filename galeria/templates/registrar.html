@@ -1,0 +1,53 @@
+{% extends 'registration/base_registration.html' %}
+
+{% block titulo %}
+Registrar
+{% endblock %}
+
+{% block h1 %}
+Galeria de Imagens
+{% endblock %}
+
+{% block titulo_form %}
+Registrar
+{% endblock %}
+
+{% block erro %}
+<ul>
+    {% for field in form %}
+        {% for error in field.errors %}
+            <li>{{ error }}</li>
+        {% endfor %}
+    {% endfor %}
+</ul>
+{% endblock%}
+
+{% block form %}
+<form method="post" action="{% url 'registrar' %}" class="w-100">
+    {% csrf_token %}
+    {{ form.non_field_errors }}
+    
+    <div class="input-box">
+        {{ form.username }}
+        <box-icon name='user' size="sm" color="white"></box-icon>
+    </div>
+    <div class="input-box">
+        {{ form.email }}
+        <box-icon name='envelope' size="sm" color="white"></box-icon>
+    </div>
+    <div class="input-box">
+        {{ form.password1 }}
+        <box-icon name='lock-alt' size="sm" color="white"></box-icon>
+    </div>
+    <div class="input-box">
+        {{ form.password2 }}
+        <box-icon name='lock-alt' size="sm" color="white"></box-icon>
+    </div>
+    
+    <button type="submit" class="btn">Registrar</button>
+</form>
+<div class="registrar">
+    <p>Já tem uma conta?</p>
+    <a href="{% url 'login' %}">Faça login</a>
+</div>
+{% endblock %}

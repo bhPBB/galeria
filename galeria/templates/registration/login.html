@@ -1,0 +1,58 @@
+{% extends './base_registration.html' %}
+
+{% block titulo %}
+Login
+{% endblock %}
+
+{% block h1 %}
+Galeria de Imagens
+{% endblock %}
+
+{% block extra %}
+<div>
+    <embed
+        style="max-width: 100svw;" 
+        src="https://www.youtube.com/embed/DlsZ_9PXKUg" 
+        width="560" 
+        height="315" 
+        allowfullscreen="true">
+</div>
+{% endblock %}
+
+{% block titulo_form %}
+Login
+{% endblock %}
+
+{% block erro %}
+<p>Seu usuário e/ou senha está(ão) incorreto(s). Por favor, tente novamente</p>
+{% endblock %}
+
+
+{% block form %}
+<form method="post" action="{% url 'login' %}">
+    {% csrf_token %}
+    <div class="input-box">
+        <input type="text" placeholder="Usuário" name="username" id="username" required>
+        <box-icon name='user' size="sm" color="white"></box-icon>
+    </div>
+    <div class="input-box">
+        <input type="password" placeholder="Senha" name="password" id="password" required>
+        <box-icon name='lock-alt' size="sm" color="white"></box-icon>
+    </div>
+    <div class="trocar-senha">
+    </div>
+    <button type="submit" class="btn">Login</button>
+</form>
+<div class="registrar d-flex flex-column">
+    <div>
+        <!-- Trocar senha -->
+        <p>Perdeu sua senha?</p>
+        <a href="{% url 'password_reset' %}">Troque-a</a>
+    </div>
+    <div>
+        <!-- Criar conta -->
+        <p>Não tem uma conta?</p>
+        <a href="{% url 'registrar' %}">Registre-se</a>
+    </div>
+</div>
+{% endblock %}
